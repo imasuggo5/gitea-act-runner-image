@@ -1,5 +1,5 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
-RUN apk add --update npm maven
+RUN apt update && apt install -y maven nodejs npm
 
 COPY --from=docker:dind /usr/local/bin/docker /usr/local/bin/
