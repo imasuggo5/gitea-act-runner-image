@@ -13,3 +13,8 @@ ENV M2_HOME /opt/apache-maven-${MAVEN_VERSION}
 ENV PATH ${PATH}:${M2_HOME}/bin
 
 COPY --from=docker:dind /usr/local/bin/docker /usr/local/bin/
+
+RUN npm install -g n && \
+  n latest
+
+RUN npm install -g npm
